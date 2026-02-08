@@ -46,6 +46,7 @@ Component types are either **directory-based** or **file-based** (`ComponentType
 | skill   | directory | `components/skills/skill-creator/`      | `.claude/skills/skill-creator/`   |
 | agent   | file      | `components/agents/code_reviewer.md`    | `.claude/agents/code_reviewer.md` |
 | command | file      | `components/commands/learn.md`          | `.claude/commands/learn.md`       |
+| rule    | file      | `components/rules/no-console-log.md`    | `.claude/rules/no-console-log.md` |
 
 This distinction flows through the entire codebase:
 - `ComponentRef.source_path` — appends `.md` for file types
@@ -73,6 +74,10 @@ This distinction flows through the entire codebase:
 - Markdown with optional YAML frontmatter
 - Body is the prompt/instructions, supports `$ARGUMENTS` substitution
 
+**Rules** (`components/rules/{name}.md`) — Single file — Claude Code auto-loaded rules
+- Markdown with optional YAML frontmatter (supports `paths` for path-scoped rules)
+- Body is the constraint/behavior that applies to every session
+
 ## Code Style
 
 - Python 3.10+, use `from __future__ import annotations`
@@ -87,4 +92,4 @@ This distinction flows through the entire codebase:
 - Put `sys.exit()` in command modules — raise `ADKError` instead
 - Use a registry file — component paths are convention-based
 - Duplicate shared logic — path resolution goes in `resolve.py`, download logic in `github.py`
-- Store agents or commands as directories — they must be single `.md` files for Claude Code
+- Store agents, commands, or rules as directories — they must be single `.md` files for Claude Code

@@ -45,8 +45,10 @@ Example directory after adding components:
 │       └── SKILL.md
 ├── agents/
 │   └── code_reviewer.md        # single file (agent)
-└── commands/
-    └── learn.md                # single file (command)
+├── commands/
+│   └── learn.md                # single file (command)
+└── rules/
+    └── no-console-log.md       # single file (rule)
 ```
 
 ### Options
@@ -65,6 +67,7 @@ Example directory after adding components:
 | `skill`   | directory | A skill with SKILL.md + optional resources | `skill:skill-creator`|
 | `agent`   | file      | A subagent definition (`.md` with frontmatter) | `agent:code_reviewer` |
 | `command` | file      | A slash command (`.md`)                  | `command:learn`        |
+| `rule`    | file      | An auto-loaded rule (`.md`)              | `rule:no-console-log`  |
 
 The name part of a ref can include subfolders: `tool:search/semantic` maps to `components/tools/search/semantic/` in the source repo.
 
@@ -104,6 +107,14 @@ components/commands/my-command.md
 
 Markdown instructions, optionally with YAML frontmatter. Supports `$ARGUMENTS` substitution.
 
+### Rules (single file)
+
+```
+components/rules/my-rule.md
+```
+
+Markdown constraints/behaviors, optionally with YAML frontmatter. Supports `paths` for path-scoped rules.
+
 ## Repository Structure
 
 ```
@@ -113,7 +124,8 @@ agentic-dev-kit/
 │   ├── tools/        # Tool components (directories)
 │   ├── skills/       # Skill components (directories)
 │   ├── agents/       # Agent components (single .md files)
-│   └── commands/     # Command components (single .md files)
+│   ├── commands/     # Command components (single .md files)
+│   └── rules/        # Rule components (single .md files)
 └── docs/             # Documentation
 ```
 

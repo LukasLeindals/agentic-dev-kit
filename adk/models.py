@@ -13,6 +13,7 @@ class ComponentType(str, Enum):
     SKILL = "skill"
     AGENT = "agent"
     COMMAND = "command"
+    RULE = "rule"
 
     @property
     def plural(self) -> str:
