@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentic-dev-kit"
+version = "0.1.0"
+description = "A lightweight kit for reusable LLM components — tools, skills, agents, and commands."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.10"
+authors = [
+    { name = "Lukas Leindals" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://github.com/LukasLeindals/agentic-dev-kit"
+Repository = "https://github.com/LukasLeindals/agentic-dev-kit"
+Issues = "https://github.com/LukasLeindals/agentic-dev-kit/issues"
+
+[tool.setuptools.packages.find]
+include = ["adk*"]
+
+[project.scripts]
+adk = "adk.cli:main"

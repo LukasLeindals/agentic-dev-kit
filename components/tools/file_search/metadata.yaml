@@ -1,0 +1,17 @@
+name: file_search
+type: tool
+description: Search for files matching a glob pattern within a directory.
+version: "0.1"
+inputs:
+  - name: pattern
+    type: string
+    description: Glob pattern to match files against (e.g. "**/*.py").
+  - name: directory
+    type: string
+    description: Root directory to search in.
+    default: "."
+outputs:
+  - name: matches
+    type: list
+    description: List of file paths matching the pattern.
+dependencies: []
