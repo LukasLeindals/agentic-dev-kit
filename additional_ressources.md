@@ -3,3 +3,5 @@
 - [Claude Code Templates](https://www.aitmpl.com/skills)
 - [Claude Fast Blog](https://claudefa.st/blog/guide/mechanics/claude-skills-guide)
 - [Home Assistant Skills](https://github.com/homeassistant-ai/skills)
+- [UV skill](https://github.com/astral-sh/claude-code-plugins/blob/main/plugins/astral/skills/uv/SKILL.md)
+- [Claude Rules](https://claudefa.st/blog/guide/mechanics/rules-directory)
